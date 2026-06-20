@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#F4F1EA}
+  ::selection{background:#FF5A1F;color:#fff}
+  @keyframes ca-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  a{color:inherit}
+</style>
+</helmet>
+
+<div style="font-family:'Geist',ui-sans-serif,system-ui,sans-serif;color:#111216;background:#F4F1EA;-webkit-font-smoothing:antialiased;overflow-x:hidden">
+
+  <!-- ============ NAV ============ -->
+  <nav style="position:sticky;top:0;z-index:50;background:rgba(244,241,234,0.82);backdrop-filter:blur(20px);border-bottom:1px solid rgba(17,18,22,0.12)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+      <a href="#top" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:#111216">
+        <svg width="30" height="30" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <rect x="4" y="4" width="40" height="40" stroke="#111216" stroke-width="2"/>
+          <line x1="24" y1="11" x2="24" y2="37" stroke="#111216" stroke-width="2"/>
+          <line x1="11" y1="24" x2="37" y2="24" stroke="#111216" stroke-width="2"/>
+          <circle cx="24" cy="24" r="4" fill="#FF5A1F"/>
+        </svg>
+        <span style="display:flex;flex-direction:column;line-height:1">
+          <span style="font-weight:600;font-size:15px;letter-spacing:0.02em">CITY ATHLETIC</span>
+          <span style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.18em;color:#5A6470;margin-top:2px">KASSEL · CHRISTIAN TRIPP</span>
+        </span>
+      </a>
+      <div style="display:flex;align-items:center;gap:28px">
+        <a href="#hyrox" style="font-size:14px;font-weight:500;text-decoration:none;color:#111216">Hyrox</a>
+        <a href="#training" style="font-size:14px;font-weight:500;text-decoration:none;color:#111216">Gruppentraining</a>
+        <a href="#pt" style="font-size:14px;font-weight:500;text-decoration:none;color:#111216">Personal Training</a>
+        <a href="#team" style="font-size:14px;font-weight:500;text-decoration:none;color:#111216">Team</a>
+        <a href="#kontakt" style="font-size:14px;font-weight:500;text-decoration:none;color:#111216">Kontakt</a>
+        <a href="#pt" style="display:inline-flex;align-items:center;gap:8px;background:#FF5A1F;color:#fff;font-size:14px;font-weight:600;padding:10px 18px;border-radius:4px;text-decoration:none" style-hover="background:#E44A0F">Probetraining →</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============ HERO ============ -->
+  <header id="top" style="background:#111216;color:#F4F1EA;position:relative;overflow:hidden">
+    <div style="height:12px;background-image:repeating-linear-gradient(90deg,rgba(244,241,234,0.28) 0 1px,transparent 1px 22px)"></div>
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;min-height:600px;padding:72px 0">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#FF5A1F;font-weight:500;display:flex;align-items:center;gap:10px">
+            <span style="width:8px;height:8px;background:#FF5A1F;border-radius:50%"></span>HYROX COACH · ATHLETIK · KASSEL
+          </div>
+          <h1 style="font-size:80px;line-height:0.96;letter-spacing:-0.03em;font-weight:600;margin:22px 0 0">8&nbsp;km.<br>8&nbsp;Stationen.<br><span style="color:#FF5A1F">Deine Zeit.</span></h1>
+          <p style="font-size:19px;line-height:1.5;color:rgba(244,241,234,0.72);margin:26px 0 0;max-width:46ch">Funktionelles Training, Hyrox-Vorbereitung und Personal&nbsp;Training mitten in Kassel — bei Christian Tripp im City Athletic. Kurz, knackig, messbar.</p>
+          <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap">
+            <a href="#training" style="display:inline-flex;align-items:center;gap:8px;background:#FF5A1F;color:#fff;font-size:15px;font-weight:600;padding:15px 24px;border-radius:4px;text-decoration:none" style-hover="background:#E44A0F">Gruppentraining ansehen →</a>
+            <a href="#pt" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#F4F1EA;font-size:15px;font-weight:600;padding:15px 24px;border-radius:4px;text-decoration:none;border:1px solid rgba(244,241,234,0.32)" style-hover="border-color:#F4F1EA">Personal Training</a>
+          </div>
+          <div style="display:flex;align-items:center;gap:18px;margin-top:34px;font-family:'Geist Mono',monospace;font-size:12px;color:rgba(244,241,234,0.6)">
+            <span style="color:#FF5A1F;letter-spacing:0.1em">★★★★★</span>
+            <span>4,9 / 5 · 51 Bewertungen auf Eversports</span>
+          </div>
+        </div>
+        <div style="position:relative">
+          <div style="position:absolute;top:-14px;left:0;right:0;display:flex;align-items:center;gap:8px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;color:rgba(244,241,234,0.6);z-index:2">
+            <span style="width:6px;height:6px;background:#FF5A1F;border-radius:50%"></span>STUDIO · KURFÜRSTENSTRASSE 10
+          </div>
+          <image-slot id="hero-main" shape="rounded" radius="6" placeholder="Foto: Training / Studio" style="display:block;width:100%;height:520px;border:1px solid rgba(244,241,234,0.16)"></image-slot>
+          <div style="position:absolute;right:-10px;bottom:24px;background:#F4F1EA;color:#111216;padding:14px 18px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,0.3)">
+            <div style="font-family:'Geist Mono',monospace;font-size:10px;letter-spacing:0.14em;color:#5A6470;text-transform:uppercase">Einheit</div>
+            <div style="font-size:28px;font-weight:600;letter-spacing:-0.02em;line-height:1.1;margin-top:2px">45 Min</div>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;color:#5A6470;margin-top:2px">kleine Gruppen · max. Betreuung</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ STATS BAND ============ -->
+  <section style="background:#111216;color:#F4F1EA;border-top:1px solid rgba(244,241,234,0.12)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:repeat(4,1fr)">
+        <div style="padding:40px 28px;border-right:1px solid rgba(244,241,234,0.12)">
+          <div style="font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1">{{ athletesLabel }}</div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,241,234,0.55);margin-top:8px">Betreute Athlet:innen</div>
+        </div>
+        <div style="padding:40px 28px;border-right:1px solid rgba(244,241,234,0.12)">
+          <div style="font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1">4,9<span style="color:#FF5A1F;font-size:28px"> ★</span></div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,241,234,0.55);margin-top:8px">51 Bewertungen</div>
+        </div>
+        <div style="padding:40px 28px;border-right:1px solid rgba(244,241,234,0.12)">
+          <div style="font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1">12+</div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,241,234,0.55);margin-top:8px">Jahre Erfahrung</div>
+        </div>
+        <div style="padding:40px 28px">
+          <div style="font-size:48px;font-weight:600;letter-spacing:-0.03em;line-height:1">15+</div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:rgba(244,241,234,0.55);margin-top:8px">Trainingsformen</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WAS IST HYROX ============ -->
+  <section id="hyrox" style="padding:96px 0;background:#F4F1EA">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:48px">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A6470;font-weight:500">§ 01 · Was ist Hyrox</div>
+          <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:16px 0 0">Der Fitness-Wettkampf,<br>für den wir dich fit machen.</h2>
+        </div>
+        <p style="font-size:17px;line-height:1.6;color:#5A6470;margin:0;max-width:52ch">Hyrox kombiniert Laufen mit funktionellem Kraft­training: <strong style="color:#111216">8 × 1 km Lauf</strong>, dazwischen <strong style="color:#111216">8 Stationen</strong> — weltweit standardisiert, immer dieselbe Strecke. Im City Athletic bereiten wir dich gezielt auf jede Station vor.</p>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.1em;color:#111216;border-top:1px solid #111216;border-bottom:1px solid rgba(17,18,22,0.12);padding:12px 0">
+        <span style="color:#FF5A1F">↔</span> 8 × 1 KM LAUF · DAZWISCHEN 8 STATIONEN · EINE GESAMTZEIT
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(17,18,22,0.12);border:1px solid rgba(17,18,22,0.12)">
+        <sc-for list="{{ stations }}" as="st" hint-placeholder-count="8">
+          <div style="background:#F4F1EA;padding:24px 22px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between" style-hover="background:#E8E3D7">
+            <div style="display:flex;align-items:baseline;justify-content:space-between">
+              <span style="font-family:'Geist Mono',monospace;font-size:13px;color:#FF5A1F;font-weight:500">{{ st.no }}</span>
+              <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5A6470;letter-spacing:0.04em">{{ st.spec }}</span>
+            </div>
+            <div>
+              <div style="font-size:18px;font-weight:600;letter-spacing:-0.01em;line-height:1.2">{{ st.name }}</div>
+              <div style="font-size:13px;color:#5A6470;line-height:1.4;margin-top:6px">{{ st.note }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GRUPPENTRAINING / EVERSPORTS ============ -->
+  <section id="training" style="padding:96px 0;background:#E8E3D7;border-top:1px solid rgba(17,18,22,0.12)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:36px">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A6470;font-weight:500">§ 02 · Gruppentraining · Eversports</div>
+          <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:16px 0 0">Kursplan & Buchung</h2>
+          <p style="font-size:17px;line-height:1.6;color:#5A6470;margin:14px 0 0;max-width:54ch">Kleingruppen mit hoher Betreuungsqualität — kein „Herumtrainieren". Buchung, Schnupperstunde und Tarife laufen direkt über Eversports.</p>
+        </div>
+        <a href="{{ eversportsUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#111216;color:#F4F1EA;font-size:15px;font-weight:600;padding:15px 24px;border-radius:4px;text-decoration:none;white-space:nowrap" style-hover="background:#000">Alle Kurse auf Eversports →</a>
+      </div>
+
+      <!-- day tabs -->
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px">
+        <sc-for list="{{ dayButtons }}" as="d" hint-placeholder-count="7">
+          <button onClick="{{ d.onClick }}" style="{{ d.style }}">{{ d.label }}</button>
+        </sc-for>
+      </div>
+
+      <!-- schedule -->
+      <div style="background:#F4F1EA;border:1px solid rgba(17,18,22,0.12);border-radius:4px;overflow:hidden">
+        <sc-for list="{{ visibleClasses }}" as="cls" hint-placeholder-count="5">
+          <div style="display:grid;grid-template-columns:120px 1fr 180px 110px;gap:16px;align-items:center;padding:18px 24px;border-bottom:1px solid rgba(17,18,22,0.08)">
+            <div style="font-family:'Geist Mono',monospace;font-size:15px;font-weight:500;color:#111216">{{ cls.time }}</div>
+            <div>
+              <div style="font-size:17px;font-weight:600;letter-spacing:-0.01em">{{ cls.name }}</div>
+              <div style="font-size:13px;color:#5A6470;margin-top:2px">{{ cls.trainer }}</div>
+            </div>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6470">{{ cls.level }}</div>
+            <div style="justify-self:end">
+              <span style="display:inline-block;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;color:#2F7D4F;border:1px solid rgba(47,125,79,0.4);padding:5px 10px;border-radius:2px">{{ cls.spots }}</span>
+            </div>
+          </div>
+        </sc-for>
+        <div style="padding:16px 24px;background:#EFEADF;font-family:'Geist Mono',monospace;font-size:12px;color:#5A6470;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+          <span>{{ scheduleHint }}</span>
+          <a href="{{ eversportsUrl }}" target="_blank" rel="noopener" style="color:#FF5A1F;font-weight:500;text-decoration:none">Platz reservieren →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PERSONAL TRAINING / ONEATHLETE ============ -->
+  <section id="pt" style="padding:96px 0;background:#111216;color:#F4F1EA">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:start">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#FF5A1F;font-weight:500">§ 03 · Personal Training · oneathlete</div>
+          <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:16px 0 0;color:#F4F1EA">1:1 mit Christian. Messbar besser.</h2>
+          <p style="font-size:17px;line-height:1.6;color:rgba(244,241,234,0.72);margin:18px 0 0;max-width:46ch">Individuelles Coaching mit klarem Plan: Baseline-Test, Zielwerte, regelmäßige Retests. Deine Entwicklung wird über oneathlete dokumentiert — kein Bauchgefühl, sondern Zahlen.</p>
+
+          <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF5A1F;margin-top:2px">01</span>
+              <div><div style="font-weight:600">Standortbestimmung</div><div style="font-size:14px;color:rgba(244,241,234,0.6)">Baseline: Kraft, Ausdauer, Mobilität, Hyrox-Stationen.</div></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF5A1F;margin-top:2px">02</span>
+              <div><div style="font-weight:600">Plan & Training</div><div style="font-size:14px;color:rgba(244,241,234,0.6)">Wöchentliche 1:1-Einheiten, abgestimmt auf dein Ziel.</div></div>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <span style="font-family:'Geist Mono',monospace;font-size:12px;color:#FF5A1F;margin-top:2px">03</span>
+              <div><div style="font-weight:600">Retest & Fortschritt</div><div style="font-size:14px;color:rgba(244,241,234,0.6)">Sichtbare Entwicklung über Zeit in deinem oneathlete-Profil.</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- embedded booking widget -->
+        <div style="background:#F4F1EA;color:#111216;border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,0.3)">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid rgba(17,18,22,0.12);background:#EFEADF">
+            <div style="display:flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5A6470">
+              <span style="width:7px;height:7px;background:#2F7D4F;border-radius:50%"></span>oneathlete · Buchung
+            </div>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#5A6470">PT-01</span>
+          </div>
+          <div style="padding:26px 22px">
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5A6470;margin-bottom:12px">Dein Fokus</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+              <sc-for list="{{ focusChips }}" as="f" hint-placeholder-count="5">
+                <button onClick="{{ f.onClick }}" style="{{ f.style }}">{{ f.label }}</button>
+              </sc-for>
+            </div>
+
+            <div style="font-size:15px;line-height:1.55;color:#111216;min-height:48px">{{ selectedFocus.desc }}</div>
+
+            <div style="margin-top:22px;display:flex;flex-direction:column;gap:16px">
+              <sc-for list="{{ selectedFocus.metrics }}" as="m" hint-placeholder-count="3">
+                <div>
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;font-family:'Geist Mono',monospace;font-size:12px;margin-bottom:6px">
+                    <span style="color:#111216;letter-spacing:0.04em">{{ m.label }}</span>
+                    <span style="color:#5A6470">{{ m.range }}</span>
+                  </div>
+                  <div style="height:8px;background:#E8E3D7;border-radius:2px;overflow:hidden">
+                    <div style="height:100%;background:#FF5A1F;width:{{ m.pct }};border-radius:2px"></div>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <a href="{{ ptBookingUrl }}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#FF5A1F;color:#fff;font-size:15px;font-weight:600;padding:15px 24px;border-radius:4px;text-decoration:none;margin-top:26px" style-hover="background:#E44A0F">Personal Training auf oneathlete anfragen →</a>
+            <div style="text-align:center;font-size:13px;color:#5A6470;margin-top:12px">Lieber direkt? <a href="https://wa.me/4917662906589" target="_blank" rel="noopener" style="color:#111216;text-decoration:underline;text-underline-offset:0.18em">Per WhatsApp schreiben</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ERFOLGE / ERGEBNISSE ============ -->
+  <sc-if value="{{ showResults }}" hint-placeholder-val="{{ true }}">
+  <section id="erfolge" style="padding:96px 0;background:#F4F1EA">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A6470;font-weight:500">§ 04 · Erfolge & Ergebnisse</div>
+      <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:16px 0 40px">Zahlen, die zählen.</h2>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(17,18,22,0.12);border:1px solid rgba(17,18,22,0.12);margin-bottom:48px">
+        <sc-for list="{{ results }}" as="r" hint-placeholder-count="3">
+          <div style="background:#F4F1EA;padding:32px 28px">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+              <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6470">{{ r.event }}</span>
+              <span style="font-family:'Geist Mono',monospace;font-size:11px;color:#FF5A1F">{{ r.tag }}</span>
+            </div>
+            <div style="font-size:40px;font-weight:600;letter-spacing:-0.03em;line-height:1">{{ r.value }}</div>
+            <div style="font-size:14px;color:#5A6470;margin-top:8px">{{ r.who }}</div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+        <sc-for list="{{ reviews }}" as="rev" hint-placeholder-count="3">
+          <div style="background:#fff;border:1px solid rgba(17,18,22,0.12);border-radius:4px;padding:24px">
+            <div style="color:#FF5A1F;font-family:'Geist Mono',monospace;letter-spacing:0.1em;font-size:13px">★★★★★</div>
+            <blockquote style="font-family:'Newsreader',serif;font-style:italic;font-size:19px;line-height:1.45;margin:14px 0 0;color:#111216">„{{ rev.text }}"</blockquote>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:#5A6470;margin-top:16px">{{ rev.who }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- ============ TEAM ============ -->
+  <section id="team" style="padding:96px 0;background:#E8E3D7;border-top:1px solid rgba(17,18,22,0.12)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A6470;font-weight:500">§ 05 · Team & Räumlichkeiten</div>
+      <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:16px 0 40px">Wer dich trainiert.</h2>
+
+      <!-- lead: Christian -->
+      <div style="display:grid;grid-template-columns:0.8fr 1.2fr;gap:40px;align-items:center;background:#F4F1EA;border:1px solid rgba(17,18,22,0.12);border-radius:6px;overflow:hidden;margin-bottom:32px">
+        <image-slot id="team-christian" shape="rect" placeholder="Foto: Christian Tripp" style="display:block;width:100%;height:380px"></image-slot>
+        <div style="padding:0 40px 0 0">
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#FF5A1F">Inhaber · Head Coach</div>
+          <h3 style="font-size:34px;font-weight:600;letter-spacing:-0.02em;margin:8px 0 0">Christian Tripp</h3>
+          <p style="font-size:16px;line-height:1.6;color:#5A6470;margin:14px 0 0;max-width:52ch">Personal- & Hyrox-Trainer in Kassel. Sein Ansatz: intensive Betreuung wie im Personal Training, kombiniert mit der Energie einer Gruppe. Funktionell, athletisch, ergebnisorientiert.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:18px">
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#111216;border:1px solid rgba(17,18,22,0.24);padding:6px 10px;border-radius:2px">Hyrox</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#111216;border:1px solid rgba(17,18,22,0.24);padding:6px 10px;border-radius:2px">Athletik</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#111216;border:1px solid rgba(17,18,22,0.24);padding:6px 10px;border-radius:2px">Personal Training</span>
+            <span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#111216;border:1px solid rgba(17,18,22,0.24);padding:6px 10px;border-radius:2px">Kraft</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- team grid -->
+      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px">
+        <sc-for list="{{ team }}" as="t" hint-placeholder-count="5">
+          <div style="background:#F4F1EA;border:1px solid rgba(17,18,22,0.12);border-radius:4px;overflow:hidden">
+            <image-slot id="{{ t.slot }}" shape="rect" placeholder="{{ t.name }}" style="display:block;width:100%;height:180px"></image-slot>
+            <div style="padding:16px">
+              <div style="font-size:16px;font-weight:600">{{ t.name }}</div>
+              <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:#5A6470;margin-top:4px">{{ t.role }}</div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- amenities -->
+      <sc-if value="{{ showAmenities }}" hint-placeholder-val="{{ true }}">
+      <div style="margin-top:40px;border-top:1px solid rgba(17,18,22,0.12);padding-top:28px">
+        <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#5A6470;margin-bottom:16px">Ausstattung · Kurfürstenstraße 10</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px">
+          <sc-for list="{{ amenities }}" as="a" hint-placeholder-count="9">
+            <span style="display:inline-flex;align-items:center;gap:8px;font-size:14px;color:#111216;background:#F4F1EA;border:1px solid rgba(17,18,22,0.12);padding:9px 14px;border-radius:2px"><span style="width:6px;height:6px;background:#FF5A1F;border-radius:50%"></span>{{ a }}</span>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ============ KONTAKT / ANFAHRT ============ -->
+  <section id="kontakt" style="padding:96px 0;background:#F4F1EA;border-top:1px solid rgba(17,18,22,0.12)">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch">
+        <div>
+          <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A6470;font-weight:500">§ 06 · Kontakt & Anfahrt</div>
+          <h2 style="font-size:44px;line-height:1.04;letter-spacing:-0.025em;font-weight:600;margin:16px 0 0">Komm vorbei.<br>Erste Stunde gratis.</h2>
+          <p style="font-size:17px;line-height:1.6;color:#5A6470;margin:16px 0 0;max-width:46ch">Kostenlos schnuppern, danach entscheiden. Mitten in Kassel, nur wenige Minuten vom Hauptbahnhof.</p>
+
+          <div style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(17,18,22,0.12);border:1px solid rgba(17,18,22,0.12);border-radius:4px;overflow:hidden">
+            <div style="background:#F4F1EA;padding:20px">
+              <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6470">Adresse</div>
+              <div style="font-size:15px;margin-top:8px;line-height:1.5">Kurfürstenstraße 10<br>34117 Kassel</div>
+            </div>
+            <div style="background:#F4F1EA;padding:20px">
+              <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6470">Telefon</div>
+              <a href="tel:+4917662906589" style="font-size:15px;margin-top:8px;display:block;text-decoration:none;color:#111216">+49 176 62906589</a>
+            </div>
+            <div style="background:#F4F1EA;padding:20px">
+              <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6470">E-Mail</div>
+              <a href="mailto:christian@personal-trainer.pt" style="font-size:15px;margin-top:8px;display:block;text-decoration:none;color:#111216;word-break:break-all">christian@personal-trainer.pt</a>
+            </div>
+            <div style="background:#F4F1EA;padding:20px">
+              <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#5A6470">Zeiten</div>
+              <div style="font-size:15px;margin-top:8px;line-height:1.5">Früh · Mittag · Abend<br>& Wochenende</div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:14px;margin-top:24px;flex-wrap:wrap">
+            <a href="{{ eversportsUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#FF5A1F;color:#fff;font-size:15px;font-weight:600;padding:15px 24px;border-radius:4px;text-decoration:none" style-hover="background:#E44A0F">Probetraining buchen →</a>
+            <a href="https://www.instagram.com/cityathletickassel/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:transparent;color:#111216;font-size:15px;font-weight:600;padding:15px 24px;border-radius:4px;text-decoration:none;border:1px solid rgba(17,18,22,0.24)" style-hover="border-color:#111216">Instagram</a>
+          </div>
+        </div>
+
+        <div style="position:relative;border:1px solid rgba(17,18,22,0.12);border-radius:6px;overflow:hidden;min-height:420px">
+          <image-slot id="kontakt-map" shape="rect" placeholder="Karte / Studio-Foto" style="display:block;width:100%;height:100%;min-height:420px"></image-slot>
+          <div style="position:absolute;left:18px;bottom:18px;background:#111216;color:#F4F1EA;padding:12px 16px;border-radius:4px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:0.06em;display:flex;align-items:center;gap:8px">
+            <span style="color:#FF5A1F">⊕</span> KURFÜRSTENSTRASSE 10 · 34117 KASSEL
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="background:#111216;color:rgba(244,241,234,0.7);padding:56px 0 32px">
+    <div style="max-width:1280px;margin:0 auto;padding:0 32px">
+      <div style="display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;padding-bottom:32px;border-bottom:1px solid rgba(244,241,234,0.16)">
+        <div style="display:flex;align-items:center;gap:12px;color:#F4F1EA">
+          <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="40" height="40" stroke="#F4F1EA" stroke-width="2"/>
+            <line x1="24" y1="11" x2="24" y2="37" stroke="#F4F1EA" stroke-width="2"/>
+            <line x1="11" y1="24" x2="37" y2="24" stroke="#F4F1EA" stroke-width="2"/>
+            <circle cx="24" cy="24" r="4" fill="#FF5A1F"/>
+          </svg>
+          <div>
+            <div style="font-weight:600;letter-spacing:0.02em">CITY ATHLETIC KASSEL</div>
+            <div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.14em;color:rgba(244,241,234,0.5);margin-top:2px">CHRISTIAN TRIPP · PERSONAL & HYROX</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:40px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:14px">
+            <a href="#hyrox" style="text-decoration:none;color:rgba(244,241,234,0.7)">Hyrox</a>
+            <a href="#training" style="text-decoration:none;color:rgba(244,241,234,0.7)">Gruppentraining</a>
+            <a href="#pt" style="text-decoration:none;color:rgba(244,241,234,0.7)">Personal Training</a>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;font-size:14px">
+            <a href="{{ eversportsUrl }}" target="_blank" rel="noopener" style="text-decoration:none;color:rgba(244,241,234,0.7)">Eversports</a>
+            <a href="https://www.instagram.com/cityathletickassel/" target="_blank" rel="noopener" style="text-decoration:none;color:rgba(244,241,234,0.7)">Instagram</a>
+            <a href="tel:+4917662906589" style="text-decoration:none;color:rgba(244,241,234,0.7)">+49 176 62906589</a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-top:24px;font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:0.08em;color:rgba(244,241,234,0.45)">
+        <span>© 2026 CITY ATHLETIC KASSEL · KURFÜRSTENSTRASSE 10 · 34117 KASSEL</span>
+        <span>IMPRESSUM · DATENSCHUTZ</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1280,&quot;height&quot;:900},&quot;athletesCoached&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:400,&quot;tsType&quot;:&quot;number&quot;,&quot;min&quot;:0,&quot;max&quot;:5000,&quot;step&quot;:10},&quot;eversportsUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.eversports.de/s/city-athletic-kassel&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;ptBookingUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://www.eversports.de/s/city-athletic-kassel&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;showResults&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;},&quot;showAmenities&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { day: 'Mo', focus: 0 };
+
+  schedule() {
+    return {
+      Mo: [
+        { time: '06:00', name: 'Athletik · Functional', trainer: 'Christian', level: 'Alle Level', spots: '4 frei' },
+        { time: '07:00', name: 'Hyrox Prep', trainer: 'Simon', level: 'Fortgeschritten', spots: '2 frei' },
+        { time: '12:00', name: 'HIIT · 45', trainer: 'Michaela', level: 'Alle Level', spots: '6 frei' },
+        { time: '18:00', name: 'Hyrox Simulation', trainer: 'Christian', level: 'Fortgeschritten', spots: '3 frei' },
+        { time: '19:00', name: 'Kraft · Langhantel', trainer: 'Max', level: 'Einsteiger', spots: '5 frei' },
+      ],
+      Di: [
+        { time: '06:30', name: 'Mobility & Core', trainer: 'Julia', level: 'Alle Level', spots: '6 frei' },
+        { time: '12:00', name: 'Kettlebell', trainer: 'Tobe', level: 'Alle Level', spots: '4 frei' },
+        { time: '17:30', name: 'Hyrox Prep', trainer: 'Simon', level: 'Fortgeschritten', spots: '2 frei' },
+        { time: '19:00', name: 'Athletik · Functional', trainer: 'Christian', level: 'Alle Level', spots: '3 frei' },
+      ],
+      Mi: [
+        { time: '06:00', name: 'HIIT · 45', trainer: 'Michaela', level: 'Alle Level', spots: '5 frei' },
+        { time: '12:00', name: 'TRX & Schlingen', trainer: 'Julia', level: 'Alle Level', spots: '6 frei' },
+        { time: '18:00', name: 'Hyrox Simulation', trainer: 'Christian', level: 'Fortgeschritten', spots: '1 frei' },
+        { time: '19:00', name: 'Kraft · Langhantel', trainer: 'Max', level: 'Einsteiger', spots: '4 frei' },
+      ],
+      Do: [
+        { time: '06:30', name: 'Athletik · Functional', trainer: 'Christian', level: 'Alle Level', spots: '4 frei' },
+        { time: '12:00', name: 'Tabata', trainer: 'Michaela', level: 'Alle Level', spots: '6 frei' },
+        { time: '17:30', name: 'Hyrox Prep', trainer: 'Simon', level: 'Fortgeschritten', spots: '3 frei' },
+        { time: '19:00', name: 'Animal Flow & Mobility', trainer: 'Julia', level: 'Alle Level', spots: '5 frei' },
+      ],
+      Fr: [
+        { time: '06:00', name: 'HIIT · 45', trainer: 'Michaela', level: 'Alle Level', spots: '5 frei' },
+        { time: '12:00', name: 'Kettlebell', trainer: 'Tobe', level: 'Alle Level', spots: '6 frei' },
+        { time: '17:00', name: 'Hyrox Simulation', trainer: 'Christian', level: 'Fortgeschritten', spots: '2 frei' },
+      ],
+      Sa: [
+        { time: '09:00', name: 'Hyrox Team Workout', trainer: 'Christian', level: 'Alle Level', spots: '8 frei' },
+        { time: '10:30', name: 'Kraft & Athletik', trainer: 'Max', level: 'Alle Level', spots: '6 frei' },
+      ],
+      So: [
+        { time: '10:00', name: 'Open Gym · Lauf-ABC', trainer: 'Simon', level: 'Alle Level', spots: '10 frei' },
+      ],
+    };
+  }
+
+  focusAreas() {
+    return [
+      { label: 'Hyrox-Vorbereitung', desc: 'Gezieltes Training für alle 8 Stationen plus Lauf-Ökonomie. Wir simulieren das Renntempo und feilen an den Übergängen.', metrics: [
+        { label: 'WALL BALLS / MIN', range: '14 → 22', pct: '64%' },
+        { label: 'SLED PUSH 50 m', range: '0:58 → 0:42', pct: '72%' },
+        { label: '1 KM LAUFPACE', range: '5:10 → 4:25', pct: '58%' },
+      ]},
+      { label: 'Kraft & Muskelaufbau', desc: 'Progressives Langhanteltraining mit sauberer Technik. Mehr Maximalkraft, mehr Muskelmasse, belastbare Gelenke.', metrics: [
+        { label: 'KNIEBEUGE 1RM', range: '80 → 120 kg', pct: '66%' },
+        { label: 'KREUZHEBEN 1RM', range: '100 → 150 kg', pct: '66%' },
+        { label: 'BANKDRÜCKEN 1RM', range: '60 → 90 kg', pct: '66%' },
+      ]},
+      { label: 'Ausdauer & Laufen', desc: 'Vom 5-km-Lauf bis zur Renndistanz: strukturiertes Intervall- und Grundlagentraining für mehr Tempo bei weniger Aufwand.', metrics: [
+        { label: '5 KM ZEIT', range: '28:00 → 23:00', pct: '60%' },
+        { label: 'VO2MAX', range: '42 → 52', pct: '70%' },
+        { label: 'RUHEPULS', range: '64 → 52 bpm', pct: '55%' },
+      ]},
+      { label: 'Körperkomposition', desc: 'Nachhaltige Veränderung mit Training und Ernährungsbegleitung — weniger Körperfett, mehr Magermasse, stabile Energie.', metrics: [
+        { label: 'KÖRPERFETT', range: '24 → 16 %', pct: '62%' },
+        { label: 'MAGERMASSE', range: '58 → 63 kg', pct: '55%' },
+        { label: 'TAILLE', range: '94 → 84 cm', pct: '60%' },
+      ]},
+      { label: 'Rückkehr & Stabilität', desc: 'Behutsamer Wiedereinstieg nach Pause oder Reizung: Mobilität, Rumpfstabilität und sauberes Bewegungsmuster zuerst.', metrics: [
+        { label: 'SPRUNGGELENK ROM', range: '24 → 38°', pct: '63%' },
+        { label: 'RUMPF-PLANK', range: '0:45 → 2:00', pct: '70%' },
+        { label: 'EINBEINSTAND', range: '15 → 45 s', pct: '66%' },
+      ]},
+    ];
+  }
+
+  tabStyle(active) {
+    const base = "font-family:'Geist Mono',monospace;font-size:13px;letter-spacing:0.08em;padding:11px 18px;border-radius:3px;cursor:pointer;border:1px solid;transition:all 160ms ease;";
+    return base + (active
+      ? "background:#111216;color:#F4F1EA;border-color:#111216;"
+      : "background:transparent;color:#5A6470;border-color:rgba(17,18,22,0.18);");
+  }
+
+  chipStyle(active) {
+    const base = "font-family:'Geist',sans-serif;font-size:14px;font-weight:500;padding:9px 14px;border-radius:3px;cursor:pointer;border:1px solid;transition:all 160ms ease;";
+    return base + (active
+      ? "background:#111216;color:#F4F1EA;border-color:#111216;"
+      : "background:transparent;color:#111216;border-color:rgba(17,18,22,0.20);");
+  }
+
+  renderVals() {
+    const days = ['Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa', 'So'];
+    const sched = this.schedule();
+    const focusAreas = this.focusAreas();
+    const ath = this.props.athletesCoached ?? 400;
+
+    return {
+      athletesLabel: ath + '+',
+      eversportsUrl: this.props.eversportsUrl ?? 'https://www.eversports.de/s/city-athletic-kassel',
+      ptBookingUrl: this.props.ptBookingUrl ?? 'https://www.eversports.de/s/city-athletic-kassel',
+      showResults: this.props.showResults ?? true,
+      showAmenities: this.props.showAmenities ?? true,
+
+      stations: [
+        { no: '01', name: 'SkiErg', spec: '1.000 m', note: 'Ganzkörper-Zug am Ski-Ergometer.' },
+        { no: '02', name: 'Sled Push', spec: '50 m', note: 'Schlitten schieben — Beinkraft pur.' },
+        { no: '03', name: 'Sled Pull', spec: '50 m', note: 'Schlitten ziehen, Rücken & Griff.' },
+        { no: '04', name: 'Burpee Broad Jumps', spec: '80 m', note: 'Burpee mit Weitsprung nach vorn.' },
+        { no: '05', name: 'Rudern', spec: '1.000 m', note: 'Rudergerät auf Zeit.' },
+        { no: '06', name: 'Farmers Carry', spec: '200 m', note: 'Schweres Tragen, beidhändig.' },
+        { no: '07', name: 'Sandbag Lunges', spec: '100 m', note: 'Ausfallschritte mit Sandsack.' },
+        { no: '08', name: 'Wall Balls', spec: '100 Wdh.', note: 'Medizinball an die Zielmarke.' },
+      ],
+
+      dayButtons: days.map(d => ({
+        label: d,
+        onClick: () => this.setState({ day: d }),
+        style: this.tabStyle(d === this.state.day),
+      })),
+      visibleClasses: sched[this.state.day] || [],
+      scheduleHint: (sched[this.state.day] || []).length + ' Einheiten · ' + this.state.day + ' · je 45 Min',
+
+      focusChips: focusAreas.map((f, i) => ({
+        label: f.label,
+        onClick: () => this.setState({ focus: i }),
+        style: this.chipStyle(i === this.state.focus),
+      })),
+      selectedFocus: focusAreas[this.state.focus],
+
+      results: [
+        { event: 'HYROX', tag: 'PRO · M', value: '1:08:42', who: 'M. — Finish, Single Pro' },
+        { event: 'HYROX', tag: 'AG · W', value: '1:21:15', who: 'A. — Age-Group-Podium' },
+        { event: 'TRANSFORMATION', tag: '12 WO.', value: '−9,4 kg', who: 'T. — Körperfett halbiert' },
+      ],
+
+      reviews: [
+        { text: 'Tolles Training, sehr empfehlenswert!', who: 'Katja · Eversports' },
+        { text: 'Great courses, great people.', who: 'Jan · Eversports' },
+        { text: 'Top — intensiv, persönlich, motivierend.', who: 'Anja · Eversports' },
+      ],
+
+      team: [
+        { name: 'Michaela', role: 'Fitness · PT', slot: 'team-michaela' },
+        { name: 'Simon', role: 'Laufen · Hyrox', slot: 'team-simon' },
+        { name: 'Julia', role: 'Mobility · TRX', slot: 'team-julia' },
+        { name: 'Max', role: 'Kraft · Langhantel', slot: 'team-max' },
+        { name: 'Tobe', role: 'Functional · PT', slot: 'team-tobe' },
+      ],
+
+      amenities: ['Duschen', 'Umkleiden', 'Parkplatz', 'Klimaanlage', 'Barrierefrei', 'Kartenzahlung', 'Shop', 'Wellness'],
+    };
+  }
+}
+</script>
+</body>
+</html>

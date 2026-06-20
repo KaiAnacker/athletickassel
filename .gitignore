@@ -1,0 +1,12 @@
+# macOS
+.DS_Store
+
+# editors / local tooling
+.vscode/
+.idea/
+.claude/
+
+# logs / deps (none expected for this static site, kept for safety)
+node_modules/
+npm-debug.log*
+*.log
