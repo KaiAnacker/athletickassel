@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>document.documentElement.className += " js";</script>
   <title>City Athletic Kassel · Hyrox, Athletik &amp; Personal Training | Christian Tripp</title>
   <meta name="description" content="Funktionelles Training, Hyrox-Vorbereitung und Personal Training mitten in Kassel. Bei Christian Tripp im City Athletic: kurz, intensiv, messbar. 4,9/5 auf Eversports.">
   <meta name="theme-color" content="#16130e">
@@ -60,6 +61,7 @@
 </head>
 <body>
   <a class="skip" href="#hyrox">Zum Inhalt springen</a>
+  <div class="progress" aria-hidden="true"><span class="progress__bar" data-progress></span></div>
 
   <!-- ============================ NAV ============================ -->
   <header class="nav" id="top" data-nav>
@@ -189,6 +191,42 @@
             Im City&nbsp;Athletic bereiten wir dich auf jede Station vor.
           </p>
         </div>
+
+        <figure class="racemap" data-reveal aria-label="Streckenschema: Start, dann acht mal ein Kilometer Lauf mit je einer Station dazwischen, danach das Ziel.">
+          <figcaption class="racemap__cap">
+            <span class="racemap__kick">Die Strecke</span>
+            8&nbsp;km Lauf + 8&nbsp;Stationen = eine Gesamtzeit
+          </figcaption>
+          <div class="racemap__track">
+          <svg class="racemap__svg" viewBox="0 0 1200 132" role="img" preserveAspectRatio="xMidYMid meet">
+            <path class="racemap__line" d="M60 70 H1140" pathLength="1" />
+            <line class="racemap__node racemap__start" x1="60" y1="56" x2="60" y2="84" />
+            <text class="racemap__node racemap__cap-label" x="60" y="106" text-anchor="start">START</text>
+            <g class="racemap__runs">
+              <text class="racemap__node racemap__run" x="120"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="240"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="360"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="480"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="600"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="720"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="840"  y="94">1 KM</text>
+              <text class="racemap__node racemap__run" x="960"  y="94">1 KM</text>
+            </g>
+            <g class="racemap__stations">
+              <g class="racemap__st"><rect x="175.5" y="65.5" width="9" height="9"/><text x="180"  y="46" text-anchor="middle">01</text></g>
+              <g class="racemap__st"><rect x="295.5" y="65.5" width="9" height="9"/><text x="300"  y="46" text-anchor="middle">02</text></g>
+              <g class="racemap__st"><rect x="415.5" y="65.5" width="9" height="9"/><text x="420"  y="46" text-anchor="middle">03</text></g>
+              <g class="racemap__st"><rect x="535.5" y="65.5" width="9" height="9"/><text x="540"  y="46" text-anchor="middle">04</text></g>
+              <g class="racemap__st"><rect x="655.5" y="65.5" width="9" height="9"/><text x="660"  y="46" text-anchor="middle">05</text></g>
+              <g class="racemap__st"><rect x="775.5" y="65.5" width="9" height="9"/><text x="780"  y="46" text-anchor="middle">06</text></g>
+              <g class="racemap__st"><rect x="895.5" y="65.5" width="9" height="9"/><text x="900"  y="46" text-anchor="middle">07</text></g>
+              <g class="racemap__st"><rect x="1015.5" y="65.5" width="9" height="9"/><text x="1020" y="46" text-anchor="middle">08</text></g>
+            </g>
+            <rect class="racemap__node racemap__finish" x="1134" y="64" width="12" height="12" />
+            <text class="racemap__node racemap__cap-label racemap__cap-label--goal" x="1140" y="106" text-anchor="end">ZIEL</text>
+          </svg>
+          </div>
+        </figure>
 
         <div class="hyrox__layout">
           <figure class="frame frame--reveal hyrox__photo" data-reveal>

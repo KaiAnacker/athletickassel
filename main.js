@@ -330,6 +330,24 @@
     }
   }
 
+  /* --------------------------------------------------- scroll progress */
+  function initProgress() {
+    const bar = $("[data-progress]");
+    if (!bar) return;
+    const root = document.documentElement;
+    let ticking = false;
+    const update = () => {
+      const max = root.scrollHeight - root.clientHeight;
+      const frac = max > 0 ? Math.min(root.scrollTop / max, 1) : 0;
+      bar.style.transform = "scaleX(" + frac.toFixed(4) + ")";
+      ticking = false;
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+  }
+
   /* --------------------------------------------------------------- misc */
   function initMisc() {
     const year = $("[data-year]");
@@ -344,6 +362,7 @@
     initTicker();
     initReveals();
     initCounters();
+    initProgress();
     initMisc();
   }
 
