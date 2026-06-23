@@ -11,47 +11,7 @@
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   /* ---------------------------------------------------------------- data */
-  const DAYS = ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"];
-
-  const SCHEDULE = {
-    Mo: [
-      { time: "06:00", name: "Athletik · Functional", trainer: "Christian", level: "Alle Level", spots: "4 frei" },
-      { time: "07:00", name: "Hyrox Prep", trainer: "Simon", level: "Fortgeschritten", spots: "2 frei" },
-      { time: "12:00", name: "HIIT · 45", trainer: "Michaela", level: "Alle Level", spots: "6 frei" },
-      { time: "18:00", name: "Hyrox Simulation", trainer: "Christian", level: "Fortgeschritten", spots: "3 frei" },
-      { time: "19:00", name: "Kraft · Langhantel", trainer: "Max", level: "Einsteiger", spots: "5 frei" },
-    ],
-    Di: [
-      { time: "06:30", name: "Mobility & Core", trainer: "Julia", level: "Alle Level", spots: "6 frei" },
-      { time: "12:00", name: "Kettlebell", trainer: "Tobe", level: "Alle Level", spots: "4 frei" },
-      { time: "17:30", name: "Hyrox Prep", trainer: "Simon", level: "Fortgeschritten", spots: "2 frei" },
-      { time: "19:00", name: "Athletik · Functional", trainer: "Christian", level: "Alle Level", spots: "3 frei" },
-    ],
-    Mi: [
-      { time: "06:00", name: "HIIT · 45", trainer: "Michaela", level: "Alle Level", spots: "5 frei" },
-      { time: "12:00", name: "TRX & Schlingen", trainer: "Julia", level: "Alle Level", spots: "6 frei" },
-      { time: "18:00", name: "Hyrox Simulation", trainer: "Christian", level: "Fortgeschritten", spots: "1 frei" },
-      { time: "19:00", name: "Kraft · Langhantel", trainer: "Max", level: "Einsteiger", spots: "4 frei" },
-    ],
-    Do: [
-      { time: "06:30", name: "Athletik · Functional", trainer: "Christian", level: "Alle Level", spots: "4 frei" },
-      { time: "12:00", name: "Tabata", trainer: "Michaela", level: "Alle Level", spots: "6 frei" },
-      { time: "17:30", name: "Hyrox Prep", trainer: "Simon", level: "Fortgeschritten", spots: "3 frei" },
-      { time: "19:00", name: "Animal Flow & Mobility", trainer: "Julia", level: "Alle Level", spots: "5 frei" },
-    ],
-    Fr: [
-      { time: "06:00", name: "HIIT · 45", trainer: "Michaela", level: "Alle Level", spots: "5 frei" },
-      { time: "12:00", name: "Kettlebell", trainer: "Tobe", level: "Alle Level", spots: "6 frei" },
-      { time: "17:00", name: "Hyrox Simulation", trainer: "Christian", level: "Fortgeschritten", spots: "2 frei" },
-    ],
-    Sa: [
-      { time: "09:00", name: "Hyrox Team Workout", trainer: "Christian", level: "Alle Level", spots: "8 frei" },
-      { time: "10:30", name: "Kraft & Athletik", trainer: "Max", level: "Alle Level", spots: "6 frei" },
-    ],
-    So: [
-      { time: "10:00", name: "Open Gym · Lauf-ABC", trainer: "Simon", level: "Alle Level", spots: "10 frei" },
-    ],
-  };
+  const CONFIG = window.CITY_ATHLETIC_CONFIG || {};
 
   const FOCUS = [
     { label: "Hyrox-Vorbereitung", desc: "Gezieltes Training für alle 8 Stationen plus Lauf-Ökonomie. Wir simulieren das Renntempo und feilen an den Übergängen.",
@@ -93,73 +53,41 @@
     return n;
   };
 
-  /* ------------------------------------------------------- schedule tabs */
-  function initSchedule() {
-    const tablist = $("[data-day-tabs]");
-    const panel = $("[data-schedule-panel]");
-    if (!tablist || !panel) return;
+  /* ----------------------------------------------- eversports (Kursplan) */
+  // Bettet das Eversports-Stundenplan-Widget direkt ein, damit Kursplan und
+  // Buchung auf DIESER Seite passieren (spart die Marktplatz-Provision).
+  // Ist in config.js noch kein Widget-Code hinterlegt, zeigt ein sauberer
+  // Fallback einen Link zu Eversports — bewusst KEINE erfundenen Kurszeiten.
+  function initEversports() {
+    const mount = $("[data-eversports-schedule]");
+    if (!mount) return;
 
-    let current = "Mo";
+    const ev = CONFIG.eversports || {};
+    const shop = ev.shopUrl || "https://www.eversports.de/s/city-athletic-kassel";
 
-    DAYS.forEach((day) => {
-      const tab = el("button", "day", day);
-      tab.type = "button";
-      tab.setAttribute("role", "tab");
-      tab.setAttribute("aria-selected", String(day === current));
-      tab.addEventListener("click", () => select(day));
-      tab.addEventListener("keydown", (e) => {
-        const i = DAYS.indexOf(day);
-        if (e.key === "ArrowRight") { e.preventDefault(); focusTab(DAYS[(i + 1) % DAYS.length]); }
-        if (e.key === "ArrowLeft")  { e.preventDefault(); focusTab(DAYS[(i - 1 + DAYS.length) % DAYS.length]); }
-      });
-      tablist.append(tab);
-    });
-
-    function focusTab(day) {
-      const tab = [...tablist.children][DAYS.indexOf(day)];
-      tab.focus();
-      select(day);
+    if (ev.scheduleWidgetCode) {
+      const frame = el("iframe", "ev-mount__frame");
+      frame.src = "https://www.eversports.com/widget/w/" + encodeURIComponent(ev.scheduleWidgetCode);
+      frame.title = "City Athletic Kassel — Kursplan & Buchung (Eversports)";
+      frame.loading = "lazy";
+      frame.setAttribute("scrolling", "no");
+      mount.append(frame);
+      return;
     }
 
-    function render(day) {
-      panel.innerHTML = "";
-      SCHEDULE[day].forEach((c) => {
-        const row = el("div", "class-row");
-        row.append(
-          el("span", "class-row__time", c.time),
-          el("div", "class-row__main",
-            `<div class="class-row__name">${c.name}</div><div class="class-row__trainer">${c.trainer}</div>`),
-          el("span", "class-row__level", c.level),
-          el("span", "class-row__spots", c.spots),
-        );
-        panel.append(row);
-      });
-      const foot = el("div", "schedule__foot");
-      foot.append(
-        el("span", null, `${SCHEDULE[day].length} Einheiten · ${day} · je 45 Min`),
-        el("a", null, "Platz reservieren →"),
-      );
-      const link = foot.querySelector("a");
-      link.href = "https://www.eversports.de/s/city-athletic-kassel";
-      link.target = "_blank"; link.rel = "noopener";
-      panel.append(foot);
-    }
-
-    function select(day) {
-      if (day === current) return;
-      current = day;
-      [...tablist.children].forEach((t, i) =>
-        t.setAttribute("aria-selected", String(DAYS[i] === day)));
-
-      if (reduceMotion) { render(day); return; }
-      panel.setAttribute("data-swapping", "");
-      window.setTimeout(() => {
-        render(day);
-        requestAnimationFrame(() => panel.removeAttribute("data-swapping"));
-      }, 150);
-    }
-
-    render(current);
+    const fb = el("div", "ev-fallback");
+    fb.innerHTML =
+      '<p class="ev-fallback__kick"><span class="dot" aria-hidden="true"></span>Live-Kursplan · Eversports</p>' +
+      '<p class="ev-fallback__lead">Kursplan, freie Plätze und Buchung laufen über Eversports — ' +
+      'auf Wunsch direkt hier eingebettet, damit du die Seite nicht verlässt.</p>' +
+      '<p class="ev-fallback__meta">Früh · Mittag · Abend &amp; Wochenende · Einheiten je 45 Min</p>';
+    const cta = el("a", "btn btn--orange");
+    cta.href = shop;
+    cta.target = "_blank";
+    cta.rel = "noopener";
+    cta.innerHTML = 'Kursplan &amp; Buchung öffnen <span aria-hidden="true">→</span>';
+    fb.append(cta);
+    mount.append(fb);
   }
 
   /* --------------------------------------------------------- PT focus UI */
@@ -357,7 +285,7 @@
   /* --------------------------------------------------------------- boot */
   function boot() {
     initNav();
-    initSchedule();
+    initEversports();
     initFocus();
     initTicker();
     initReveals();

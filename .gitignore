@@ -6,7 +6,16 @@
 .idea/
 .claude/
 
-# logs / deps (none expected for this static site, kept for safety)
+# logs / deps
 node_modules/
 npm-debug.log*
 *.log
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+
+# Vercel / env
+.vercel
+.env*.local

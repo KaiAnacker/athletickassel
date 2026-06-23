@@ -14,7 +14,9 @@ City Athletic Kassel is the training studio of **Christian Tripp**, a personal a
 Hyrox coach in central Kassel (Kurfürstenstraße 10). It offers three things:
 
 1. **Hyrox preparation** — targeted training for the 8 km / 8-station fitness race.
-2. **Gruppentraining** — small functional/athletic classes, booked via Eversports.
+2. **Gruppentraining** — small-group classes in three focuses, priority-ordered: **Hyrox** (1),
+   **TRX & Functional** (2), then **general fitness & strength** (HIIT, Langhantel, Athletik,
+   Mobility) (3). Booked via Eversports.
 3. **Personal Training (1:1)** — measured coaching via the oneathlete platform:
    baseline test, plan, retest, documented progress.
 

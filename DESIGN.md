@@ -16,7 +16,7 @@ concept's reflex; we left it.
 
 ## Color — OKLCH, "Committed" strategy
 
-Orange carries the identity; warm near-black creates the drama; warm paper holds the
+A gold-yellow accent carries the identity; warm near-black creates the drama; warm paper holds the
 content. We exceed the "one accent ≤ 10%" rule on purpose (brand permission).
 
 | Token | OKLCH | Role |
@@ -25,8 +25,8 @@ content. We exceed the "one accent ≤ 10%" rule on purpose (brand permission).
 | `--paper-2` | `oklch(0.905 0.018 78)` | recessed panels, alternating sections |
 | `--ink` | `oklch(0.185 0.012 67)` | text on paper; background of dark sections |
 | `--ink-soft` | `oklch(0.50 0.016 72)` | secondary text, labels |
-| `--orange` | `oklch(0.685 0.205 38)` | brand accent: CTAs, data, the dot, drench moments |
-| `--orange-press` | `oklch(0.605 0.18 37)` | pressed/hover orange |
+| `--orange` | `oklch(0.74 0.155 85)` | brand accent (gold-yellow): CTAs, data, the dot. Button/selection text is `--ink` for contrast |
+| `--orange-press` | `oklch(0.66 0.145 82)` | pressed/hover accent |
 | `--cream` | `oklch(0.955 0.011 79)` | text/marks on dark sections |
 | `--green` | `oklch(0.60 0.115 155)` | availability ("frei") only |
 

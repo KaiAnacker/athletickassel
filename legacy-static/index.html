@@ -273,8 +273,9 @@
         </div>
 
         <div class="schedule" data-reveal>
-          <div class="schedule__days" role="tablist" aria-label="Wochentag wählen" data-day-tabs></div>
-          <div class="schedule__panel" role="tabpanel" aria-live="polite" data-schedule-panel></div>
+          <!-- Eversports-Stundenplan-Widget (live), sonst sauberer Fallback.
+               Steuerung: config.js → eversports.scheduleWidgetCode -->
+          <div class="ev-mount" data-eversports-schedule></div>
           <noscript>
             <p class="schedule__noscript">Den vollständigen Kursplan findest du
               <a href="https://www.eversports.de/s/city-athletic-kassel" target="_blank" rel="noopener">auf Eversports</a>.</p>
@@ -527,6 +528,7 @@
     </div>
   </footer>
 
+  <script src="config.js" defer></script>
   <script src="main.js" defer></script>
 </body>
 </html>
